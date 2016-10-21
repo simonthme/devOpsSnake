@@ -1,0 +1,12 @@
+---
+- name: Install components
+  hosts: all
+  remote_user: root
+  sudo: yes
+  roles:
+    - sqlite
+    - nginx
+    - gunicorn
+    - futurice.supervisor
+    - app
+...

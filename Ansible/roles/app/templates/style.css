@@ -1,0 +1,31 @@
+
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: #132f59;
+	justify-content: center;
+	align-items: center;
+	color: white;
+
+}
+
+h1 {
+	color: white;
+	font-family: Arial;
+	font-size: 3em;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+h2 {
+	color: white;
+	font-family: Arial;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+p {
+	color: white;
+	font-family: Arial;
+	font-size: 1em;
+}

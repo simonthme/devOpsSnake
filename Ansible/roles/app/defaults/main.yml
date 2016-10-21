@@ -1,0 +1,11 @@
+---
+app:
+  owner: app
+  install_dir: /opt/app
+  conf_dir: /etc/app
+  log_dir: /var/log/app
+  src_getPip: https://bootstrap.pypa.io/get-pip.py
+  dest_getPip: /tmp/get-pip.py
+  dest_file: /home/vagrant/HelloWorld/__init__.py
+
+...

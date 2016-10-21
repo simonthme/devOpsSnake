@@ -1,0 +1,47 @@
+---
+
+- name: installing get-pip from url
+  get_url: url={{app.src_getPip}} dest={{app.dest_getPip}}
+
+- name: install pip
+  command: python {{app.dest_getPip}}
+
+- name: install flask
+  pip: name=flask
+
+- name: create project directory
+  file: >
+    path='/home/vagrant/HelloWorld'
+    mode=0755
+    state=directory
+
+- name: copy app file to guest
+  copy: src=__init__.py dest={{app.dest_file}}
+
+- name: run server
+  command: gunicorn app:app -D -b 0.0.0.0:5000 chdir=~/
+
+- name: create templates folder
+  file: >
+    path='/home/vagrant/HelloWorld/templates'
+    mode=0755
+    state=directory
+
+- name: html template
+  template:
+    src='view.html'
+    dest='/home/vagrant/HelloWorld/templates/'
+    mode=0755
+
+- name: create static folder
+  file: >
+    path='/home/vagrant/HelloWorld/static/styles/'
+    mode=0755
+    state=directory
+
+- name: render stylesheet template
+  template:
+    src='style.css'
+    dest='/home/vagrant/HelloWorld/static/styles/'
+    mode=0755
+...

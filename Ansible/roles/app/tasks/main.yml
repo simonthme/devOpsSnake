@@ -44,4 +44,7 @@
     src='style.css'
     dest='/home/vagrant/HelloWorld/static/styles/'
     mode=0755
+
+- name: start flask
+  command: python /home/vagrant/HelloWorld/__init__.py
 ...
